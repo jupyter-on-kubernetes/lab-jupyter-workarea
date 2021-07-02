@@ -1,0 +1,9 @@
+apiVersion: training.eduk8s.io/v1alpha1
+kind: TrainingPortal
+metadata:
+  name: lab-jupyter-workarea
+spec:
+  workshops:
+  - name: lab-jupyter-workarea
+    capacity: 1
+    orphaned: 15m

@@ -1,0 +1,30 @@
+apiVersion: training.eduk8s.io/v1alpha2
+kind: Workshop
+metadata:
+  name: lab-jupyter-workarea
+spec:
+  title: Jupyter Workarea
+  description: Demonstration of providing a workarea for using Jupyter.
+  url: https://github.com/jupyter-on-kubernetes/lab-jupyter-workarea
+  content:
+    image: conda-environment:*
+    files: github.com/jupyter-on-kubernetes/lab-jupyter-workshop
+  session:
+    budget: medium
+    resources:
+      memory: 2Gi
+      storage: 5Gi
+    applications:
+      workshop:
+        enabled: false
+      terminal:
+        enabled: false
+    env:
+    - name: ENABLE_JUPYTERLAB
+      value: "true"
+    ingresses:
+    - name: jupyter
+      port: 8888
+    dashboards:
+    - name: Jupyter
+      url: "$(ingress_protocol)://$(session_namespace)-jupyter.$(ingress_domain)/"
