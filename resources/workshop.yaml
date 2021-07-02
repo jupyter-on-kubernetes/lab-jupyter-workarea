@@ -8,7 +8,7 @@ spec:
   url: https://github.com/jupyter-on-kubernetes/lab-jupyter-workarea
   content:
     image: conda-environment:*
-    files: github.com/jupyter-on-kubernetes/lab-jupyter-workshop
+    files: github.com/jupyter-on-kubernetes/lab-jupyter-workarea
   session:
     budget: medium
     resources:
